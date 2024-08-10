@@ -170,7 +170,7 @@ function VulnAD-DefaultPassword {
     }
 }
 function VulnAD-PasswordSpraying {
-    $same_password = "ncc1701";
+    $same_password = "password123";
     for ($i=1; $i -le (Get-Random -Maximum 12); $i=$i+1 ) {
         $randomuser = (VulnAD-GetRandom -InputList $Global:CreatedUsers)
         Set-AdAccountPassword -Identity $randomuser -Reset -NewPassword (ConvertTo-SecureString $same_password -AsPlainText -Force)
